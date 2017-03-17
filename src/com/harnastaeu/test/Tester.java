@@ -30,9 +30,13 @@ public class Tester {
         Map<String, Person> result =
                 personList.stream().collect(Collectors.toMap(Person::getName,
                         Function.identity()));
-        for(Person p : result.values()){
-            System.out.println(p.getName());
+         Set<QuotaType> quotas = QuotaType.DAILY_QUOTAS;
+
+        for(QuotaType q : quotas){
+            System.out.println(q.getKeyName());
         }
+
+        System.out.println(QuotaType.DAILY_SHARES.getKeyName());
 
     }
 }
